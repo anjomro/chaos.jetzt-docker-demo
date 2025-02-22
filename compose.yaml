@@ -1,0 +1,12 @@
+services:
+  chaosdemo:
+    image: chaos-docker:compose
+    build:
+      context: .
+      dockerfile: Dockerfile
+    pull_policy: never
+    ports:
+      - "8981:5000"
+    environment:
+      - CHAOS_NAME=siegfried
+      - PASSWORD=12345678
